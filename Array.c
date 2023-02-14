@@ -21,7 +21,9 @@ int main() {
 		for (int i = 0; i < BASE; i++) {
 			array[i] = sin(2 * M_PI * i / BASE);
 		}
-
+	}
+#pragma acc kernels
+	{
 		for (int i = 0; i < BASE; i++) {
 			sum += array[i];
 		}
